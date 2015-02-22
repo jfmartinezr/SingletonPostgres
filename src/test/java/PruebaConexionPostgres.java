@@ -5,7 +5,6 @@
  */
 import java.sql.DriverManager;
 import org.testng.annotations.Test;
- 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -20,9 +19,16 @@ public class PruebaConexionPostgres {
     public void pruebaconexionPotgresTest(){
         Connection   conexion=null;
         try {
+            //conexion servidor aretico
             String cadenaConexion = "jdbc:postgresql://nuevo.aretico.com:5432/software_2";
             String user="grupo2";
             String pwd="alvmart";
+            
+            //conexion localhost
+            //String cadenaConexion = "jdbc:postgresql://127.0.0.1:5432/software_2";
+            //String user="postgres";
+            //String pwd="alvmart";
+            
             Class.forName("org.postgresql.Driver");
                conexion = DriverManager.getConnection(cadenaConexion,user,pwd);
             Assert.assertNotNull(conexion);
