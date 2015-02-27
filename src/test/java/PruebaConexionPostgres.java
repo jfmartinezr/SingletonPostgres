@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.mycompany.singleton.Conexion;
 import java.sql.DriverManager;
 import org.testng.annotations.Test;
 import java.sql.Connection;
@@ -22,7 +23,7 @@ public class PruebaConexionPostgres {
             //conexion servidor aretico
             String cadenaConexion = "jdbc:postgresql://nuevo.aretico.com:5432/software_2";
             String user="grupo2";
-            String pwd="alvmart";
+           String pwd="alvmart";
             
             //conexion localhost
             //String cadenaConexion = "jdbc:postgresql://127.0.0.1:5432/software_2";
@@ -44,4 +45,23 @@ public class PruebaConexionPostgres {
             }
         }
     } 
+    
+    @Test
+    public void testDriverPostgres() throws SQLException{
+        //Connection   conexion=null;
+        
+        //Connection con = null;
+        //Assert.assertEquals(Conexion.getInstance().connect,con);
+        //Assert.assertNotNull(conexion);
+        
+        Connection   conexion=null;
+        
+          Assert.assertEquals(Conexion.getInstance().connect,conexion);
+         
+        
+        
+        
+    
+    }
+    
 }

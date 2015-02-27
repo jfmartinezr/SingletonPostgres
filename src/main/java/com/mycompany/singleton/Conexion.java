@@ -15,10 +15,12 @@ public class Conexion {
     private String cadenaConexion = "jdbc:postgresql://nuevo.aretico.com:5432/software_2";
     private String user = "grupo2";
     private String pwd = "alvmart";
-    Connection connect;
+    public static Connection connect;
 
     // El constructor privado no permite que se genere un constructor por defecto.
-    private Conexion() {
+    //ojo provado
+   
+    public Conexion() {
         //codigo opcional
         connect = null;
 
@@ -41,6 +43,7 @@ public class Conexion {
     }
 
     //crea un metodo estatico para traer la instancia //opcional sincronizacion
+   
     public static Conexion getInstance() {
 
         //verifico si la instancia no se ha creado anteriormente    
@@ -50,14 +53,14 @@ public class Conexion {
         return INSTANCE;
     }
 
-    public void getAlgo() {
-        System.out.println("I am here....");
-    }
+   // public void getAlgo() {
+    //    System.out.println("I am here....");
+   // }
 
-    public static void main(String a[]) {
-        Conexion co = Conexion.getInstance();
-        co.getAlgo();
+   // public static void main(String a[]) {
+    //    Conexion co = Conexion.getInstance();
+    //    co.getAlgo();
 
-    }
+    //}
 
 }
